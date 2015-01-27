@@ -4,6 +4,13 @@ Finally, animations between routes! This package is tightly integrated with [Iro
 
 Check out the [example app](https://github.com/ccorcos/meteor-transitioner-example).
 
+## To Do
+
+- Expand the set of animations with Velocity.RegisterEffect
+- Create a new demo with a dropdown menu of effects
+- Support default animation
+- How to handle iron router `waitOne`?
+
 ## Getting Started
 
     meteor add ccorcos:transitioner
