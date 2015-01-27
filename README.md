@@ -6,7 +6,7 @@ Check out the [example app](https://github.com/ccorcos/meteor-transitioner-examp
 
 ## Getting Started
 
-    `meteor add ccorcos:transitioner`
+    meteor add ccorcos:transitioner
 
 First you need to add Iron Router and make some routes. Then you'll need to wrap the `{{>yield}}` in your iron layout with the transitioner block helpers:
 
