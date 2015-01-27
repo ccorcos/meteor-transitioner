@@ -8,9 +8,9 @@ Package.describe({
 Package.onUse(function(api) {
   api.versionsFrom('METEOR@1');
 
-  api.versionsFrom('velocityjs:velocityjs@1.2.1')
-  api.versionsFrom('iron:router@1.0.7')
   api.use([
+    'velocityjs:velocityjs@1.2.0',
+    'iron:router@1.0.0',
     'coffeescript',
     'templating',
     'underscore'
