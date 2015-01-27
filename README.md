@@ -2,6 +2,8 @@
 
 Finally, animations between routes! This package is tightly integrated with [Iron Router](https://github.com/EventedMind/iron-router) and [VelocityJS](http://julian.com/research/velocity/).
 
+Check out the [example app](https://github.com/ccorcos/meteor-transitioner-example).
+
 ## Getting Started
 
     `meteor add ccorcos:transitioner`
