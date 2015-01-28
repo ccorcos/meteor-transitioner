@@ -58,6 +58,12 @@ An `animation` can be one of three things.
           complete: -> 
             $node.remove()
 
+You can also set a default animation between all routes using `Transitioner.defualt`. For example:
+
+    Transitioner.default
+      in: 'transition.fadeIn'
+      out: 'transition.fadeOut'
+
 ## Recommendations
 
 Build your app such that every page has it's own self-contained style. You'll also need every div up to your transitioner to have a specified height and width, typically 100%.
