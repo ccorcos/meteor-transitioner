@@ -1,6 +1,15 @@
 class TransitionerClass
-  constructor: (@defaultVelocityAnimation) ->
+  constructor: () ->
     @transitions = []
+
+  default: (velocityAnimaton) ->
+    unless velocityAnimaton?.in?
+      console.log 'ERROR: velocityAnimaton must contain a velocityAnimaton.in'
+      return
+    unless velocityAnimaton?.out?
+      console.log 'ERROR: velocityAnimaton must contain a velocityAnimaton.out'
+      return
+    @defaultVelocityAnimation = velocityAnimaton
   
   transition: (obj) ->
     unless obj?.fromRoute?
@@ -27,7 +36,7 @@ class TransitionerClass
     if transitionObj
       return transitionObj.velocityAnimaton
     else if @defaultVelocityAnimation
-      return defaultVelocityAnimation
+      return @defaultVelocityAnimation
     else
       return {
         in: (node, next) ->

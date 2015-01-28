@@ -1,7 +1,7 @@
 Package.describe({
   name: 'ccorcos:transitioner',
   summary: 'Page transitions integrated with Iron Router.',
-  version: '1.0.0',
+  version: '1.0.1',
   git: 'https://github.com/ccorcos/meteor-transitioner'
 });
 

@@ -9,7 +9,7 @@ Check out the [example app](https://github.com/ccorcos/meteor-transitioner-examp
 - Expand the set of animations with Velocity.RegisterEffect
 - Create a new demo with a dropdown menu of effects
 - Support default animation
-- How to handle iron router `waitOne`?
+- How to handle iron router `waitOn`?
 
 ## Getting Started
 
