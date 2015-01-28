@@ -57,3 +57,7 @@ An `animation` can be one of three things.
           queue: false
           complete: -> 
             $node.remove()
+
+## Recommendations
+
+Build your app such that every page has it's own self-contained style. You'll also need every div up to your transitioner to have a specified height and width, typically 100%.
