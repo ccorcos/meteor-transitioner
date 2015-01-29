@@ -41,23 +41,23 @@ An `animation` can be one of three things.
 
 3. You can create custom animations just like you would with `_uihooks.insertElement` and `_uihooks.removeElement`. For example:
 
-      slideRight = 
-        in: (node, next) ->
-          $node = $(node)
-          $.Velocity.hook($node, "translateX", "100%");
-          $node.insertBefore(next)
-            .velocity {translateX: ['0%', '100%']},
+        slideRight = 
+          in: (node, next) ->
+            $node = $(node)
+            $.Velocity.hook($node, "translateX", "100%");
+            $node.insertBefore(next)
+              .velocity {translateX: ['0%', '100%']},
+                duration: 500
+                easing: 'ease-in-out'
+                queue: false
+          out: (node) ->
+            $node = $(node)
+            $node.velocity {translateX: '-100%'},
               duration: 500
               easing: 'ease-in-out'
               queue: false
-        out: (node) ->
-          $node = $(node)
-          $node.velocity {translateX: '-100%'},
-            duration: 500
-            easing: 'ease-in-out'
-            queue: false
-            complete: -> 
-              $node.remove()
+              complete: -> 
+                $node.remove()
 
 You can also set a default animation between all routes using `Transitioner.defualt`. For example:
 
