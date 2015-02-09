@@ -92,7 +92,8 @@ Template.transitioner.rendered = ->
         $(node).insertBefore(next)
           .velocity animation.in
       else if _.isArray animation?.in
-        $(node).insertBefore(next)
+        $node = $(node)
+        $node.insertBefore(next)
           .velocity.apply($node, animation.in)
       else
         console.log "ERROR: animation.in not found!!"
