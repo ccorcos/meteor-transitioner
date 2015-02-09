@@ -1,0 +1,47 @@
+<template name="layout">
+  {{#transitioner}}
+    {{> yield}}
+  {{/transitioner}}
+</template>
+
+<template name="main">
+  <div class="main">
+    <div class="buttons">
+      <div class="slideRight button">
+        <a href="{{pathFor 'slideRight'}}">slide right</a>
+      </div>
+      <div class="slideLeft button">
+        <a href="{{pathFor 'slideLeft'}}">slide left</a>
+      </div>
+      <div class="slideUp button">
+        <a href="{{pathFor 'slideUp'}}">slide up</a>
+      </div>
+      <div class="slideDown button">
+        <a href="{{pathFor 'slideDown'}}">slide down</a>
+      </div>
+      <div class="fade button">
+        <a href="{{pathFor 'fade'}}">fade</a>
+      </div>
+    </div>
+  </div>
+</template>
+
+<template name="slideRight">
+  <div class="slideRight"></div>
+</template>
+
+<template name="slideLeft">
+  <div class="slideLeft"></div>
+</template>
+
+<template name="slideUp">
+  <div class="slideUp"></div>
+</template>
+
+<template name="slideDown">
+  <div class="slideDown"></div>
+</template>
+
+<template name="fade">
+  <div class="fade"></div>
+</template>
