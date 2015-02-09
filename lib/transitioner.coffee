@@ -2,14 +2,14 @@ class TransitionerClass
   constructor: () ->
     @transitions = []
 
-  default: (velocityAnimaton) ->
-    unless velocityAnimaton?.in?
-      console.log 'ERROR: velocityAnimaton must contain a velocityAnimaton.in'
+  default: (velocityAnimation) ->
+    unless velocityAnimation?.in?
+      console.log 'ERROR: velocityAnimation must contain a velocityAnimation.in'
       return
-    unless velocityAnimaton?.out?
-      console.log 'ERROR: velocityAnimaton must contain a velocityAnimaton.out'
+    unless velocityAnimation?.out?
+      console.log 'ERROR: velocityAnimation must contain a velocityAnimation.out'
       return
-    @defaultVelocityAnimation = velocityAnimaton
+    @defaultVelocityAnimation = velocityAnimation
   
   transition: (obj) ->
     unless obj?.fromRoute?
@@ -18,14 +18,14 @@ class TransitionerClass
     unless obj?.toRoute?
       console.log 'ERROR: transition object must contain a toRoute'
       return
-    unless obj?.velocityAnimaton?
-      console.log 'ERROR: transition object must contain a velocityAnimaton'
+    unless obj?.velocityAnimation?
+      console.log 'ERROR: transition object must contain a velocityAnimation'
       return
-    unless obj?.velocityAnimaton?.in?
-      console.log 'ERROR: transition object must contain a velocityAnimaton.in'
+    unless obj?.velocityAnimation?.in?
+      console.log 'ERROR: transition object must contain a velocityAnimation.in'
       return
-    unless obj?.velocityAnimaton?.out?
-      console.log 'ERROR: transition object must contain a velocityAnimaton.out'
+    unless obj?.velocityAnimation?.out?
+      console.log 'ERROR: transition object must contain a velocityAnimation.out'
       return
     @transitions.push obj
 
@@ -34,7 +34,7 @@ class TransitionerClass
       transition.fromRoute is fromRoute and transition.toRoute is toRoute
 
     if transitionObj
-      return transitionObj.velocityAnimaton
+      return transitionObj.velocityAnimation
     else if @defaultVelocityAnimation
       return @defaultVelocityAnimation
     else
@@ -92,8 +92,7 @@ Template.transitioner.rendered = ->
         $(node).insertBefore(next)
           .velocity animation.in
       else if _.isArray animation?.in
-        $node = $(node)
-        $node.insertBefore(next)
+        $(node).insertBefore(next)
           .velocity.apply($node, animation.in)
       else
         console.log "ERROR: animation.in not found!!"
