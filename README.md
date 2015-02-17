@@ -35,7 +35,15 @@ Then you can specify transitions between routes using the following:
 
 An `animation` can be one of three things. 
 
-1. The easiest is to pass a [VelocityJS UI Pack pre-registered effect](http://julian.com/research/velocity/#uiPack) as a string. For example, 'transition.swoopIn', 'transition.whirlOut', 'transition.slideLeftIn', etc. [A you can find a demo of these effects in the dropdown of the "Effects: Pre-Registered" section](http://julian.com/research/velocity/#uiPack). [You can also check out the source to see how to register your own effects](https://github.com/julianshapiro/velocity/blob/master/velocity.ui.js#L299).
+1. The easiest is to pass a [VelocityJS UI Pack pre-registered effect](http://julian.com/research/velocity/#uiPack) as a string. For example, 'transition.swoopIn', 'transition.whirlOut', 'transition.slideLeftIn', etc. [A you can find a demo of these effects in the dropdown of the "Effects: Pre-Registered" section](http://julian.com/research/velocity/#uiPack). [You can also check out the source to see how to register your own effects](https://github.com/julianshapiro/velocity/blob/master/velocity.ui.js#L299). For example:
+
+        $.Velocity.RegisterEffect 'transition.pushLeftIn', 
+          defaultDuration: 500,
+          calls: [
+            [{translateX: ['0%', '-100%'], translateZ: 0, easing: "ease-in-out", opacity: [1, 1]}]
+          ]
+
+    Setting `translateZ` enforces GPU usage and the `opacity: [1, 1]` dummy variable [prevents a flash at the beginning of the animation](https://github.com/julianshapiro/velocity/issues/422#issuecomment-74593585).
 
 2. If you want to pass options like easing or duration, you pass an array of velocity arguements.
 
