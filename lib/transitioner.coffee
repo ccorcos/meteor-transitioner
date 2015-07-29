@@ -79,7 +79,7 @@ toRoute = null
 Meteor.startup ->
   Tracker.autorun ->
     fromRoute = toRoute
-    toRoute = Router.current()?.route.getName()
+    toRoute = Router.current()?.route?.getName?()
 
 Template.transitioner.rendered = ->
 
