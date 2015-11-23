@@ -10,7 +10,7 @@ class TransitionerClass
       console.log 'ERROR: velocityAnimation must contain a velocityAnimation.out'
       return
     @defaultVelocityAnimation = velocityAnimation
-  
+
   transition: (obj) ->
     unless obj?.fromRoute?
       console.log 'ERROR: transition object must contain a fromRoute'
@@ -86,7 +86,7 @@ Template.transitioner.rendered = ->
   @find("#transitioner-"+@id)?._uihooks =
     insertElement: (node, next) ->
       animation = Transitioner.getAnimation(fromRoute, toRoute)
-      if _.isFunction animation?.in 
+      if _.isFunction animation?.in
         animation.in.apply this, [node, next]
       else if _.isString animation?.in
         $(node).insertBefore(next)
@@ -101,19 +101,18 @@ Template.transitioner.rendered = ->
 
     removeElement: (node) ->
       animation = Transitioner.getAnimation(fromRoute, toRoute)
-      if _.isFunction animation?.out 
+      if _.isFunction animation?.out
         animation.out.apply this, [node]
       else if _.isString animation?.out
         $node = $(node)
-        $node.velocity animation.out, 
+        $node.velocity animation.out,
           complete: -> $node.remove()
       else if _.isArray animation?.out
         $node = $(node)
+        animation.out.push ->
+          $node.remove()
+        console.log(animation.out)
         $node.velocity.apply($node, animation.out)
-          .velocity {opacity: 0}, 
-            duration:0
-            queue: true
-            complete: -> $node.remove()
       else
         console.log "ERROR: animation.out not found!!"
         $(node).remove()
