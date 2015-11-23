@@ -111,7 +111,6 @@ Template.transitioner.rendered = ->
         $node = $(node)
         animation.out.push ->
           $node.remove()
-        console.log(animation.out)
         $node.velocity.apply($node, animation.out)
       else
         console.log "ERROR: animation.out not found!!"
