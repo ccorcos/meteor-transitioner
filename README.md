@@ -1,4 +1,4 @@
-# Iron Router Transitioner
+# Iron Router Transitioner [DEPRECATED]
 
 Finally, animations between routes! This package is tightly integrated with [Iron Router](https://github.com/EventedMind/iron-router) and [VelocityJS](http://julian.com/research/velocity/).
 
