@@ -1,4 +1,4 @@
-# Iron Router Transitioner [DEPRECATED]
+# Iron Router Transitioner [MAINTAINER WANTED]
 
 Finally, animations between routes! This package is tightly integrated with [Iron Router](https://github.com/EventedMind/iron-router) and [VelocityJS](http://julian.com/research/velocity/).
 
@@ -33,11 +33,11 @@ Then you can specify transitions between routes using the following:
         }
     })
 
-An `animation` can be one of three things. 
+An `animation` can be one of three things.
 
 1. The easiest is to pass a [VelocityJS UI Pack pre-registered effect](http://julian.com/research/velocity/#uiPack) as a string. For example, 'transition.swoopIn', 'transition.whirlOut', 'transition.slideLeftIn', etc. [A you can find a demo of these effects in the dropdown of the "Effects: Pre-Registered" section](http://julian.com/research/velocity/#uiPack). [You can also check out the source to see how to register your own effects](https://github.com/julianshapiro/velocity/blob/master/velocity.ui.js#L299). For example:
 
-        $.Velocity.RegisterEffect 'transition.pushLeftIn', 
+        $.Velocity.RegisterEffect 'transition.pushLeftIn',
           defaultDuration: 500,
           calls: [
             [{translateX: ['0%', '-100%'], translateZ: 0, easing: "ease-in-out", opacity: [1, 1]}]
@@ -49,7 +49,7 @@ An `animation` can be one of three things.
 
 3. You can create custom animations just like you would with `_uihooks.insertElement` and `_uihooks.removeElement`. For example:
 
-        slideRight = 
+        slideRight =
           in: (node, next) ->
             $node = $(node)
             $.Velocity.hook($node, "translateX", "100%");
@@ -64,7 +64,7 @@ An `animation` can be one of three things.
               duration: 500
               easing: 'ease-in-out'
               queue: false
-              complete: -> 
+              complete: ->
                 $node.remove()
 
 You can also set a default animation between all routes using `Transitioner.defualt`. For example:
